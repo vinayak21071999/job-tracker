@@ -9,7 +9,6 @@ import config
 from matcher import filter_jobs
 from notifier import notify_new_jobs
 from scrapers.linkedin import fetch_all_linkedin_searches
-from scrapers.naukri import fetch_naukri_jobs
 from scrapers.workday import fetch_all_workday_companies
 from seen_store import load_seen_ids, save_seen_ids
 
@@ -20,9 +19,10 @@ def collect_all_jobs():
     all_jobs.extend(fetch_all_workday_companies(config.WORKDAY_COMPANIES))
     all_jobs.extend(fetch_all_linkedin_searches(config.LINKEDIN_SEARCHES))
 
-    # Naukri only runs once you've configured scrapers/naukri.py - see its docstring
-    for title in config.TARGET_TITLES[:3]:  # keep this short to avoid hammering Naukri
-        all_jobs.extend(fetch_naukri_jobs(keyword=title, location="Bengaluru"))
+    # Naukri (scrapers/naukri.py) is left in the repo but not called here -
+    # its session cookie/nkparam expire too quickly (minutes, not days) to be
+    # worth automating. Run it manually with fresh headers if you want an
+    # occasional check: from scrapers.naukri import fetch_naukri_jobs
 
     return all_jobs
 

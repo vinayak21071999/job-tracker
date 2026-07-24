@@ -7,11 +7,11 @@ Set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID as environment variables
 import os
 import requests
 
-# TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
-# TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-TELEGRAM_BOT_TOKEN = "7699896031:AAGMSn_i9TiAfetwLpfX6Bwa6Xa7uYZMhJ4"
-TELEGRAM_CHAT_ID = "530289659"
+# TELEGRAM_BOT_TOKEN = "7699896031:AAGMSn_i9TiAfetwLpfX6Bwa6Xa7uYZMhJ4"
+# TELEGRAM_CHAT_ID = "530289659"
 
 def send_telegram_message(text: str):
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:

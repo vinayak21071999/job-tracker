@@ -58,6 +58,7 @@ LINKEDIN_SEARCHES = [
     {"keywords": "SDET", "location": "Bengaluru, Karnataka, India"},
     {"keywords": "Automation Test Engineer", "location": "Pune, Maharashtra, India"},
     {"keywords": "Python Automation Engineer", "location": "Bengaluru, Karnataka, India"},
+    {"keywords": "Manual test Engineer", "location": "Bengaluru, Karnataka, India"},
 ]
 
 # --- Telegram ---
